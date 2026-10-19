@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>2. 가시 속성(1)</title>
+    <!-- 가시 속성: 태그가 화면에 보이는 방식 지정(대표적으로 display 속성)
+        CSS의 display 속성을 사용해 박스를 인라인, 블록, 인라인-블록 형식으로 강제 설정 가능
+        display 속성에 입력할 수 있는 키워드
+        1. none: 화면에 보이지 않음.
+        2. block: 블록 박스 형식으로 지정
+        3. inline: 인라인 박스 형식으로 지정
+        4. inline-block: 인라인과 블록의 중간 형태로 지정 -->
+    <style>
+        #box {
+            /* display: none; -> div 부분 화면에 표시 X */
+            /* display: block; -> div 부분이 블록 형식으로 화면에 표시 */
+            /* display: inline; -> div 부분이 인라인 형식으로 화면에 표시 */
+            display: inline-block;
+            /* inline-block은 margin/padding 속성을 상하좌우 네 방향으로 지정할 수 있고 width/height 속성이 적용되는 반면,
+                inline은 margin/padding 속성을 좌우만 지정할 수 있고 width/height 속성이 적용되지 않음. */
+        }
+    </style>
+</head>
+<body>
+    <span>더미 객체</span>
+    <div id="box">대상 객체</div>
+    <span>더미 객체</span>
+</body>
+</html>

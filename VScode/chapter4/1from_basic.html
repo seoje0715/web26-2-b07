@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1. 입력 양식 태그</title>
+</head>
+<body>
+    <!-- 입력: form 태그로 데이터를 입력받아 서버로 전송할 영역을 생성 후 form 태그 내부에 input 태그를 삽입 -->
+    <h1>입력창</h1>
+    <form>
+        <input type="text" name="search">
+        <!-- type="text": 글자를 입력할 칸 생성 
+            name="search": 입력받은 데이터를 search라는 이름으로 지정 -->
+        <input type="submit">
+        <!-- type="submit": 제출 버튼 생성 -->
+    </form><br>
+
+    <hr><h1>form 태그의 속성</h1>
+    <!-- form 태그는 method 속성의 방식으로 action 속성 장소에 데이터를 전송 
+        <form action="전송 위치" method="전송 방식"></form> 형태로 사용 -->
+
+    <!-- method 속성에서 가장 많이 사용하는 전송 방식 
+        1. GET 전송 방식
+        2. POST 전송 방식 -->
+
+    <h3>GET 전송 방식</h3>
+    <!-- 입력한 값이 주소창에 전달됨('?search=입력값'이 주소창 뒤에 추가 / 데이터 용량에 제한 O).
+        입력값을 검색했을 때 입력 데이터를 주소에 전달하였다면 get 방식 -->
+    <form method="get">
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
+
+    <h3>POST 전송 방식</h3> <!-- 입력한 값이 주소창에 전달되지 않음(get 방식보다 비밀스레 데이터 전달 -> 데이터 용량에 제한 X). -->
+    <form method="post">
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
+
+    <hr><h1>1. form_basic</h1>
+    <!-- 입력 양식 태그 
+        1. form 태그
+            - 표면적으로 드러나지 않지만 입력 양식의 시작과 끝을 표시
+        2. input 태그
+            - 속성
+                > text: 글자 입력 양식 생성
+                > email: 이메일 입력 양식 생성(내가 추가)
+                > button: 버튼 생성
+                > checkbox: 체크박스 생성
+                > file: 파일 입력 양식 생성(파일 선택창 생성)
+                > hidden: 해당 내용을 표시하지 않기 때문에 형태가 나타나지 X
+                > image: 이미지 형태 생성
+                > password: 비밀번호 입력 양식 생성
+                > radio: 라디오 버튼 생성('여자 or 남자'와 같이 선택하는 버튼)
+                > reset: 초기화 버튼 생성
+                > submit: 제출 버튼 생성
+        3. textarea 태그
+            - 속성
+                > cols/rows: 여러 행의 글자 입력 양식 생성, cols는 너비 지정, rows는 높이 지정
+        4. select/optgroup/option 태그: 선택 양식 생성/옵션 그룹화/옵션 생성
+        5. fieldset/legend: 여러 입력창을 담은 상자 생성/그 그룹의 이름 지정 -->
+    <form>
+        <!-- 사용자가 입력하는 입력 양식 -->
+        <input type="text" name="text" value="text"><br>
+        <!-- value 속성: 개발자가 구분을 위해 붙여둔 데이터 값 -->
+        <input type="password" name="password" value="password"><br>
+        <input type="file" name="file" value="file"><br>
+        <input type="checkbox" name="checkbox" value="checkbox"><br>
+        <input type="radio" name="radio" value="radio"><br>
+
+        <!-- 보이지 않는 입력 양식 -->
+        <input type="hidden" name="hidden" value="hidden"><br>
+
+        <!-- 버튼 -->
+        <input type="button" value="button"><br>
+        <input type="reset" value="reset"><br>
+        <input type="submit" value="submit"><br>
+        <input type="image" src="https://placehold.co/100x100"><br>
+        <!-- 버튼은 name을 설정해도 의미가 그닥 X
+            but, radio 또는 checkbox는 name이 중요
+            name: like 변수명, 하나의 name 속에 radio 항목들이 있어야 하나 선택하면 하나가 취소됨. -->
+    </form>
+
+    <hr><h1>2. note_formLabel</h1>
+    <!-- label 태그: input 태그를 설명할 때 사용
+        ex. 이름 입력칸 만들 때 '이름'이라고 라벨링
+            -> label 태그의 for 속성에 input 태그의 id 속성을 입력하여 label 태그가 어떤 input 태그를 나타내는지 표시 -->
+    <form>
+        <label for="name">이름</label><br>
+        <input id="name" type="text"><br><br>
+    </form>
+
+    <hr><h1>3. form_radio</h1>
+    <form>
+        <table>
+            <tr>
+                <td><label for="username">이름</label></td>
+                <td><input id="username" type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input id="man" type="radio" name="gender" value="m">
+                    <label for="man">남자</label>
+                    <!-- 이름은 보통 이름 입력창 순서로 표시되지만 젠더는 라디오 성별 순서로 표시되기 때문에 input, label 순서로 입력 -->
+                    <input id="woman" type="radio" name="gender" value="w">
+                    <label for="woman">여자</label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="가입">
+    </form>
+
+    <hr><h1>4. form_selectBasic</h1>
+    <!-- select 태그: 목록의 항목 중 하나 또는 여러 개를 선택할 때 사용하는 입력 양식 요소(하지만 선택할 수 있는 모든 요소가 select 태그로 구성된 것은 X, 요즘은 select 태그 잘 사용 X)
+        -> select 태그 내에 option 태그를 입력하면 옵션을 선택할 수 O -->
+    <h3>한 항목만 선택하기</h3>
+    <select>
+        <option>김밥</option>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>어묵</option>
+    </select>
+    <h3>여러 항목 선택하기</h3>
+    <!-- 여러 항목을 선택하려면 select 태그의 multiple 속성을 사용
+        but, 스마트폰에만 예쁘게 출력돼서 데스크톱 웹 페이지에서는 잘 사용 X -->
+    <select multiple="multiple">
+        <option>김밥</option>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>어묵</option>
+    </select>
+    <h3>선택 옵션 묶기</h3>
+    <!-- optgroup 태그를 사용해 선택 옵션을 그룹으로 묶을 수 O -->
+    <select>
+        <optgroup label="HTML5">
+            <option>Multimedia Tag</option>
+            <option>Connectivity</option>
+            <option>Device Access</option>
+        </optgroup>
+        <optgroup label="CSS3">
+            <option>Animation</option>
+            <option>3D Transform</option>
+        </optgroup>
+    </select>
+
+    <hr><h1>7. form_group</h1>
+    <!-- fieldset/legend 태그를 사용하면 입력 양식을 그룹으로 묶고 이름 지정 가능
+        legend 태그는 fieldset 태그 내부에 사용(다른 곳에는 효과가 X) -->
+    <form>
+        <fieldset>
+            <legend>입력 양식</legend>
+            <table>
+                <tr>
+                    <td><label for="username">이름</label></td>
+                    <td><input id="username" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">이메일</label></td>
+                    <td><input id="email" type="email"></td>
+                </tr>
+            </table>
+            <input type="submit">
+        </fieldset>
+    </form>
+
+    <hr><h1>8. note_textarea</h1>
+    <h3>잘못된 형태</h3>
+    <textarea>
+        Textarea 태그
+        Textarea 태그
+    </textarea>
+    <h3>올바른 형태</h3>
+    <textarea>Textarea 태그
+Textarea 태그</textarea>
+    <!-- 내용 사이의 공백을 최소화하기 위해 엔터 후 제일 앞에 내용 작성-->
+</body>
+</html>

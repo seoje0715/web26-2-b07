@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>후손 선택자</title>
+    <!-- 바로 밑 단계는 자손, 자손 포함한 모든 아래는 후손
+        후손 선택자 형태: 선택자 선택자
+        자손 선택자 형태: 선택자 > 선택자 -->
+    <style>
+        #nj h1 { color: aqua; }
+        #section h1 {color: pink; }
+    </style>
+</head>
+<body>
+    <div id="nj">
+        <h1 class="title">Newjeans</h1>
+        <div id="bunny">
+            <h1>Bunnies</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Newjeans</h1>
+        <p>Newjeans is everywhere.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>속성 선택자 사용</title>
+    <style>
+        input[type="text"] { background: red; }
+        input[type="password"] { background: blue; }
+    </style>
+</head>
+<body>
+    <!-- 속성 선택자: 특정 속성 또는 값이 있는 태그 선택 시 사용
+        1. 선택자[속성]: 특정 속성이 있는 태그 선택
+        2. 선택자[속성=값]: 특정한 속성 내부 값이 특정 값과 같은 태그 선택
+        ex. input 태그는 type 속성에 따라 각각의 형태가 다르기 때문에 속성 선택자를 많이 사용 -->
+    <form>
+        <input type="text">
+        <input type="password">
+    </form>
+</body>
+</html>

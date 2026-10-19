@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 크기 단위</title>
+    <!-- 1. 키워드 단위: 키보드는 W3C에서 미리 정의한 단어로, 키워드를 스타일 값으로 입력하면 키워드에 해당하는 스타일이 자동으로 적용
+        2. 크기 단위: CSS3에서 가장 많이 사용하는 단위로, %, em, cm, mm, inch, px가 있음.
+            > %: 백분율 단위
+            > em: 배수 단위
+            > px: 픽셀 단위
+        3. 색상 단위: 영단어로 표현할 수 있는 색상은 제한적이기 때문에 색상 단위를 따로 제공
+            - RGB 색상
+                > 형태: rgb(red, green, blue)
+                > 설명: 빨초파를 조합해 색상을 표현하며, 0부터 255 사이의 숫자를 입력
+                > ex: h1 { background-color: rgb(255, 255, 255); }
+            - RGBA 색상
+                > 형태: rgba(red, green, blue, alpha)
+                > 설명: RGB 색상 단위에 투명도를 나타내는 알파 값을 추가한 형태로 0.0~1.0 사이의 숫자를 입력
+                        (0.0은 완전 투명 상태, 1.0은 완전 불투명 상태)
+                > ex: h1 { background-color: rgba(255, 255, 255, 0.5); }
+            - HEX 코드
+                > 형태: #000000
+                > 설명: RGB 색상 단위를 짧게 입력하는 방법으로, RGB 색상 조합을 #00(r)00(g)00(b)와 같은 16진수로 입력
+                > ex: h1 { background-color: #0094FF; }
+        4. URL 단위: 이미지나 글꼴 파일을 불러올 때 사용 -->
+    <style>
+        /* % 단위 적용
+            p:nth-child(1) {}
+            p:nth-child(2) { font-size: 100%; }
+            p:nth-child(3) { font-size: 150%; }
+            p:nth-child(4) { font-size: 200%; } */
+        
+        /* em 단위 적용
+            p:nth-child(1) {}
+            p:nth-child(2) { font-size: 1.0em; }
+            p:nth-child(3) { font-size: 1.5em; }
+            p:nth-child(4) { font-size: 2.0em; } */
+
+        /* px 단위 적용 */
+        p:nth-child(2) { font-size: 16px; }
+        p:nth-child(3) { font-size: 24px; }
+        p:nth-child(4) { font-size: 32px; }
+    </style>
+</head>
+<body>
+    <p>Newjeans is everywhere.</p>
+    <p>Newjeans is everywhere.</p>
+    <p>Newjeans is everywhere.</p>
+    <p>Newjeans is everywhere.</p>
+</body>
+</html>

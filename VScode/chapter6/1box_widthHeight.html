@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>1. 박스 속성(1)</title>
+    <!-- CSS에서는 각 요소가 박스라는 사각 영역을 생성하고
+        이 영역이나 이것을 둘러싼 테두리에 크기, 색상, 위치 드오가 관련한 속성을 지정함으로써 스타일을 변경
+        박스 속성: margin, border, padding, width, height 속성을 합쳐서 칭하는 명칭
+        width, height 속성은 글자를 감싸는 영역의 크기 지정 -->
+    <style>
+        div {
+            width: 100px; height: 100px;
+            background-color: red;
+
+            border: 20px solid black; /* solid는 테두리가 실선
+                                            dotted는 점선
+                                            dashed는 긴 점선
+                                            double은 이중선 */
+            margin: 10px; padding: 30px;
+            /* 태그 전체 너비: width + 2(margin+border+padding)
+                태그 전체 높이: height + 2(margin+border+padding) */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

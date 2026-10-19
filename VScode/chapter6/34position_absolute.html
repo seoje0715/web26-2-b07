@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>5. 위치 속성</title>
+    <!-- 요소 위치 정할 때(position 속성 사용)
+        1. 절대 위치 좌표: 요소의 X 좌표와 Y 좌표를 지정(ex. position: absolute or fixed)
+            > absolute: 절대 위치 좌표 설정
+            > fixed: 화면을 기준으로 절대 위치 좌표 설정
+        2. 상대 위치 좌표: 요소를 입력한 순서에 따라 지정(ex. position: static or relative)
+            > static: 위쪽에서 아래쪽으로 순서대로 배치
+            > relative: 초기 위치에서 상하좌우로 위치 이동
+        절대 위치 좌표는 드래그해서 만들 수 있으므로 상대 위치 좌표보다 개발 쉬움. 
+        
+        요소 순서 변경하고 싶을 때(z-index 속성 사용 -> z-index 숫자가 클수록 앞에 위치, but 너무 크면 웹 브라우저가 인식하지 못할 수 O) -->
+    <style>
+        .box {
+            width: 100px; height: 100px;
+            position: absolute;
+        }
+        /* absolute 때문에 h1 태그 두 문장이 붙어서 표시됨.
+            원래 div 때문에 두 태그 사이에는 거리가 넓어야 하지만 absolute를 쓰면 문서의 일반 배치 흐름을 벗어나기 때문에
+            div가 비어있고 따라서 높이가 0이라고 간주한 후 두 문장을 붙여 표기함.
+            문제 해결을 위해서는 '자손의 position 속성에 absolute 키워드를 적요아려면 부모에게 height 속성을 입력'하는 공식 사용 */
+        /* 색상이 적용된 상자가 자신의 부모를 기준으로 위치를 잡지 않음. */
+
+        .box:nth-child(1) { 
+            background-color: red;
+            left: 10px; top: 10px;
+            z-index: 100;
+        }
+        .box:nth-child(2) { 
+            background-color: green;
+            left: 50px; top: 50px;
+            z-index: 10;
+        }
+        .box:nth-child(3) {
+            background-color: blue;
+            left: 90px; top: 90px;
+            z-index: 1;}
+
+        body > div {
+            width: 400px; height: 100px;
+            border: 3px solid black;
+            position: relative;
+            overflow-y: scroll; /* y축만 scroll 생성 */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor amet</h1>
+    <div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <h1>Lorem ipsum dolor amet</h1>
+</body>
+</html>

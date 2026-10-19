@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>4. 클래스 선택자(기본) 사용</title>
+    <style>
+        .select {
+            color: red;
+        }
+        .item {
+            color: red;
+        }
+        .header {
+            background-color: blue;
+        }
+        /* background는 배경색만 지정하지만, background-color는 여러가지 지정 가능 */
+        h2.bunny {
+            color: aqua;
+        }
+        li.bunny {
+            color: yellow;
+        }
+        /* '태그.클래스' 형태로 사용하면 정확도 상승
+            id 선택자와 class 선택자는 비슷한 결과를 도출하기 때문에 편리한 것 사용하면 됨(요즘은 클래스만 사용하는 추세).*/
+    </style>
+</head>
+<body>
+    <h1>클래스 선택자 1개 사용</h1>
+    <ul>
+        <li class="select">사과</li>
+        <li>바나나</li>
+        <li class="select">오렌지</li>
+        <li>감</li>
+    </ul>
+    
+    <h1>클래스 선택자 여러 개 사용</h1>
+    <h2 class="item header">동해물과 백두산이</h2>
+    <!-- 공백으로 구분해 클래스를 여러 개 사용 가능
+        -> item 클래스와 header 클래스로 구분되어 2가지 속성 따로 적용 가능 -->
+
+    <h1>class 속성 중복</h1>
+    <!-- class는 id와 다르게 중복 가능, 오히려 잘 사용하면 더욱 정확히 사용할 수 O -->
+    <h2 class="bunny">Newjeans</h2>
+    <ul>
+        <li>민지</li>
+        <li>하니</li>
+        <li class="bunny">다니엘</li>
+        <li>해린</li>
+        <li>혜인</li>
+    </ul>
+</body>
+</html>

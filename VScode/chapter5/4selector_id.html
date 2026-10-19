@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>3. 아이디 선택자(기본) 사용</title>
+    <!-- width: ~px; margin: 0 auto;는 박스 가운데 배치하는 공식-->
+    <style>
+        #header {
+            width: 800px; margin: 0 auto;
+            background: red;
+        }
+        #wrap {
+            width: 800px; margin: 0 auto;
+            overflow: hidden;
+        }
+        #aside {
+            width: 200px; float: left;
+            background: blue;
+        }
+        #content{
+            width: 600px; float: left;
+            background: green;
+        }
+        /* aside와 content 모두 left에 쌓는 이유는 왼쪽부터 차곡차곡 쌓기 위함. */
+    </style>
+    <!-- margin 속성: 바깥 여백 크기 지정
+                    (margin: 위아래 좌우; -> margin: 0 20px;는 위아래는 0, 좌우는 20px 여백 생성)
+        padding 속성: 안쪽 여백 크기 지정
+        overflow 속성: 내용이 넘칠 때 처리 방법 지정
+                    (1. visible: 넘쳐도 그냥 보여줌.
+                    2. hidden: 넘친 내용을 숨김.
+                    3. scroll: 항상 스크롤바 생성
+                    4. auto: 필요할 때만 스크롤바 생성)
+        float 속성: 특정 데이터를 왼쪽이나 오른쪽에 띄움.
+                    (ex. [이미지] 글글글
+                                 글글글) -->
+</head>
+<body>
+    <!-- id: 주민등록번호처럼 겹치면 안 되고 불러오기 용이해야 함(만약 id를 같은 걸 여러 개 사용하면 모두 디자인이 적용됨.).
+        ex. <h1 id="top">맨 위</h1>
+            <a href="#top">맨 위로 이동</a>
+            name과 id는 다름 -> name은 서버에 데이터를 보낼 때 사용, id는 코드 내의 구분 위해 사용(주로 자바나 CSS에서 사용) -->
+    <div id="header"> <!-- div가 박스 생성 -->
+        <h1>#header 태그</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>#aside 태그</h1>
+        </div>
+        <div id="content">
+            <h1>#content 태그</h1>
+        </div>
+    </div>
+</body>
+</html>

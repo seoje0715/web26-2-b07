@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자손 선택자</title>
+    <!-- table 태그에서는 자손 선택자 사용 X 
+        ex. thead/tbody 구분하지 않고 table 생성해도 웹 브라우저가 자동으로 tbody 태그 추가(구분 안 해도 table 모두가 tbody로 인식됨.) -->
+    <style>
+        #nj > h1 { color: aqua; }
+        /* 태그로 이해하기
+            태그 다음 태그는 자손 O, 그 후는 자손 X(후손은 O) -> bunny는 nj의 자식이 아니라 후손이기 때문에 디자인 적용 X
+            선택자 > 선택자 > 선택자 ... 또한 가능(하지만 자손이 아니라 후손을 입력한다면 디자인이 적용되지 X) */
+        #section > h1 {color: pink; }
+    </style>
+</head>
+<body>
+    <div id="nj">
+        <h1 class="title">Newjeans</h1>
+        <div id="bunny">
+            <h1>Bunnies</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Newjeans</h1>
+        <p>Newjeans is everywhere.</p>
+    </div>
+</body>
+</html>
